@@ -55,9 +55,9 @@ function Layout({ children }: LayoutProps): React.ReactElement {
             <div key={item.id} className='flex flex-col justify-end items-center'>
               {location.pathname === item.path && (
                 <div className='flex flex-col items-center'>
-                  <div className='h-5 w-10 bg-primary rounded-t-full'></div>
+                  <div className='h-1 w-20 bg-primary'></div>
+                  <div className='h-1 w-20 bg-primary2'></div>
                   {/* <div className='h-5 w-20 bg-primary rounded-t-full text-center'> */}
-                    <i className={`${item.icon} text-xl text-white`}></i>
                   </div>
                 // </div>
               )}

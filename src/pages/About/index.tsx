@@ -11,11 +11,11 @@ interface AboutProps {
 const About: React.FC<AboutProps> = (props: AboutProps) => {
   return (
     <Layout>
-       <div>
+     
           <Intro />
           <Services />
           <Credentials/>
-       </div>
+  
     </Layout>
   );
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import lottie from "lottie-web";
+
 function Intro() {
   const containerRef = React.useRef<HTMLDivElement | null>(null);
 
