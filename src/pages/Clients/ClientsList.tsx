@@ -6,7 +6,7 @@ function ClientsList() {
   const clients = [
     {
       id: 0,
-      name: "Slack",
+      name: "JCirlce9",
       logo: "https://www.jonchristie.net/favicon.png",
       url: "https://www.tcs.com/",
       description:

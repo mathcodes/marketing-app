@@ -47,19 +47,19 @@ function Layout({ children }: LayoutProps): React.ReactElement {
       {/* content */}
       <div className='pb-44 overflow-x-hidden'>{children}</div>
 
-      Copy code
+    
       {/* footer */}
-      <div className='fixed bottom-10 left-0 right-0 sm:bottom-0'>
+      <div className='fixed bottom-0 left-0 right-0 sm:bottom-0'>
         <div className='flex w-full justify-center'>
           {menuItems.map((item, index) => (
             <div key={item.id} className='flex flex-col justify-end items-center'>
               {location.pathname === item.path && (
                 <div className='flex flex-col items-center'>
                   <div className='h-5 w-10 bg-primary rounded-t-full'></div>
-                  <div className='h-5 w-20 bg-primary rounded-t-full text-center'>
+                  {/* <div className='h-5 w-20 bg-primary rounded-t-full text-center'> */}
                     <i className={`${item.icon} text-xl text-white`}></i>
                   </div>
-                </div>
+                // </div>
               )}
               <div
                 className={`px-20 sm:px-8 bg-primary py-5 ${index === 0 && 'rounded-l'

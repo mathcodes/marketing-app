@@ -5,26 +5,26 @@ function MarketingSrategies() {
     {
       title: "CONTENT MARKETING",
       description:
-        "Content marketing is a form of marketing focused on creating, publishing, and distributing content for a targeted audience online. ",
-      image: "images/content-marketing.png",
+        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.. ",
+      image: "images/marketing1.png",
     },
     {
       title: "INBOUND MARKETING",
       description:
-        "Inbound is far and away the most effective B2B marketing strategy because it leverages the strengths of the majority of the other nine strategies to attract, engage, and delight customers. ",
-      image: "images/inbound-marketing.png",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+      image: "https://www.hubspot.com/hubfs/International%20Web/Brand-refresh-2022/EN/Flywheel-Graphic-EN.svg",
     },
     {
       title: "SOCIAL MEDIA",
       description:
-        "Social media marketing focuses on providing users with content they find valuable and want to share across their social networks, resulting in increased visibility and website traffic.   ",
-      image: "images/social-media.png",
+        "Adipiscing elit pellentesque habitant morbi tristique senectus et netus. Mi sit amet mauris commodo quis imperdiet. Libero enim sed faucibus turpis in eu mi bibendum. Vitae suscipit tellus mauris a diam maecenas sed enim. Cras fermentum odio eu feugiat pretium nibh ipsum. Urna id volutpat lacus laoreet non curabitur gravida arcu ac. Vitae suscipit tellus mauris a diam maecenas sed. Aliquet bibendum enim facilisis gravida neque. ",
+      image: "images/hexmarketing.png",
     },
     {
       title: "SEARCH ENGINE OPTIMIZATION",
       description:
-        "Search engine optimization is the process of improving the quality and quantity of website traffic to a website or a web page from search engines.",
-      image: "images/seo.png",
+        "Blandit turpis cursus in hac. Gravida neque convallis a cras semper. Porta nibh venenatis cras sed felis eget velit. Pharetra diam sit amet nisl. Amet justo donec enim diam vulputate ut. Tellus elementum sagittis vitae et leo duis. Scelerisque felis imperdiet proin fermentum leo. Scelerisque eleifend donec pretium vulputate sapien. Vitae auctor eu augue ut lectus arcu bibendum at varius. Iaculis at erat pellentesque adipiscing.",
+      image: "images/seoM.jpg",
     },
   ];
 
@@ -37,11 +37,7 @@ function MarketingSrategies() {
         The <b className="text-secondary">SOLUTION</b> is here..
       </h1>
       <p className="text-gray-600 text-xl mt-10">
-        Curious about what business professionals think of different marketing
-        strategies. We took a look at recent survey results and reports that
-        compiled data on the topic, and created a list of 10 B2B marketing
-        strategies commonly recognized as successful regardless of industry.
-        Here’s what we found, in no particular order:
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       </p>
 
       <div className="grid grid-cols-2 gap-20 mt-10 sm:grid-cols-1">

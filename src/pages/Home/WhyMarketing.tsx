@@ -35,18 +35,13 @@ function WhyMarketing() {
         ></lottie-player> */}
       </div>
       <p className="text-gray-600 text-md mt-10">
-        Do you know what your customers want? Do you think your customers trust
-        your products? When was the last time you saw a customer tweeting about
-        your product or service? Was it a complaint or compliment?
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       </p>
       <h1 className="text-primary text-4xl font-semibold mt-10">
-        The answers to all these questions lie in marketing.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit
       </h1>
       <p className="text-gray-600 text-md mt-10">
-        How you market your business determines if the enterprise will be
-        successful or not. Marketing is a tool used to create and maintain
-        demand, relevance, reputation, competition and more. Without it, your
-        business is likely to close down due to lack of sales.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       </p>
     </div>
   );

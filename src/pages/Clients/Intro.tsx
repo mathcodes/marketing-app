@@ -7,7 +7,7 @@ function Intro(): React.ReactElement {
   React.useEffect(() => {
     if (!containerRef.current) {
       return;
-    }
+    } 
     const animation = lottie.loadAnimation({
       container: containerRef.current,
       renderer: 'svg',
