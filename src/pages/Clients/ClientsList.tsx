@@ -173,7 +173,6 @@ function ClientsList() {
           ))}
         </div>
       </div>
-
       <Numbers />
     </div>
   );

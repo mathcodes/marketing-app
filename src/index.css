@@ -46,6 +46,7 @@ body
     --tw-scale-y: 1;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
+
 }
 
 @media (max-width: 767px)
@@ -54,6 +55,9 @@ body
   {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
+  .sm\:max-w-sm {
+    max-width: 80%;
+}
 }
 
 .sm\:scale-100

@@ -35,6 +35,9 @@ npm start
 - lottie-web
 - react-router-dom
 - react-dom
+- @heroicons/react
+- @headlessui/react
+- Modals
 
 # Contributing
 Contributions are always welcome! Please read the [contribution guidelines](./CONTRIBUTING.md) first.
