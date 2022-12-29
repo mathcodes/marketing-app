@@ -45,6 +45,7 @@ function Layout({ children }: LayoutProps): React.ReactElement {
   return (
     <div>
       {/* content */}
+      
       <div className='pb-44 overflow-x-hidden'>{children}</div>
 
     

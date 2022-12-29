@@ -1,12 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
 
-* {
+*
+{
   font-family: "Montserrat", sans-serif !important;
 }
-html , body{
-    overflow-x: hidden;
+
+html,
+body
+{
+  overflow-x: hidden;
 }
-.about-intro {
+
+.about-intro
+{
   background-color: #135d66;
   background-image: linear-gradient(315deg, #135d66, #4faeba 74%);
   overflow-x: hidden !important;
@@ -18,10 +24,41 @@ html , body{
   border-radius: 50px
 }
 
-.keywords{
+.keywords
+{
   color: #4faeba;
 }
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@media (max-width: 639px)
+{
+  .sm\:grid-cols-1
+  {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sm\:scale-100
+  {
+    --tw-scale-x: 1;
+    --tw-scale-y: 1;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
+}
+
+@media (max-width: 767px)
+{
+  .sm\:grid-cols-1
+  {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+
+.sm\:scale-100
+{
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}

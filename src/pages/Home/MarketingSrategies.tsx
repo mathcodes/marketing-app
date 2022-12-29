@@ -1,4 +1,5 @@
 import React from "react";
+import Modal from "../../components/Modal";
 
 function MarketingSrategies() {
   const strategies = [
@@ -30,6 +31,7 @@ function MarketingSrategies() {
 
   return (
     <div>
+      
       <h1 className="text-3xl font-semibold text-primary sm:mt-10">
         Want to boost your business growth ?
       </h1>
@@ -44,12 +46,13 @@ function MarketingSrategies() {
         {strategies.map((item) => {
           return (
             <div className="border border-primary p-5 flex flex-col space-y-10 rounded transform hover:scale-105 duration-300">
-              <h1 className="mx-20 sm:mx-5 text-center -mt-8 bg-white border-primary border text-2xl rounded text-secondary py-2">
+              <h1 className="mx-20 lg:mx-5 text-center -mt-8 bg-white border-primary border text-xl rounded text-secondary py-2">
                 {item.title}
               </h1>
-              <img src={item.image} alt="" className="h-24 w-24" />
-              <p className="text-gray-600 text-md hover:text-primary">{item.description}</p>
+              <img src={item.image} alt="" className="m-auto h-24 w-24" />
+              <Modal title={item.title} image={item.image} descr={item.description}/>
             </div>
+
           );
         })}
       </div>
