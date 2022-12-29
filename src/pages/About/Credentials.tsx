@@ -8,19 +8,19 @@ const Credentials: React.FC<CredentialsProps> = (props: CredentialsProps) => {
   const items = [
     {
       title: "Lorem Ipsum",
-      image: "images/innovation.png",
+      image: "images/deadline.jpg",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     },
     {
       title: "Dolor Sit Amet",
-      image: "images/investment.png",
+      image: "images/presentation.png",
       description:
         "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     },
     {
       title: "Consectetur Adipiscing",
-      image: "images/customer-support.png",
+      image: "images/marketing1.png",
       description:
         "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     },
