@@ -6,7 +6,7 @@ function ClientsList() {
   const clients = [
     {
       id: 0,
-      name: "JCirlce9",
+      name: "JCircle9",
       logo: "https://www.jonchristie.net/favicon.png",
       url: "https://www.tcs.com/",
       description:
@@ -31,7 +31,7 @@ function ClientsList() {
     {
       id: 4,
       name: "Cisco Webex",
-      logo: "https://www.cisco.com/favicon.ico",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Cisco_logo_blue_2016.svg/330px-Cisco_logo_blue_2016.svg.png",
       url: "https://www.webex.com/",
       description:
         "Cisco Webex is a cloud-based collaboration platform that offers video meetings, webinars, and team messaging. It’s designed for businesses of all sizes and offers a variety of features such as screen sharing, whiteboarding, and integration with other tools.",
@@ -39,7 +39,7 @@ function ClientsList() {
     {
       id: 5,
       name: "Zoom",
-      logo: "https://www.zoom.us/favicon.ico",
+      logo: "https://1000logos.net/wp-content/uploads/2021/06/Zoom-Logo-2014-500x281.png",
       url: "https://www.zoom.us/",
       description: "Zoom is a video conferencing platform that allows you to connect with others remotely. It offers features such as screen sharing, virtual backgrounds, and breakout rooms for group discussions."
     },
@@ -126,8 +126,8 @@ function ClientsList() {
 
   return (
     <div>
-      <div className="bg-primary h-44 rounded-b-full sm:rounded-b-2xl"></div>
-      <div className="flex justify-center -mt-44 items-end space-x-10 sm:space-x-0 sm:p-5 overflow-x-hidden">
+      <div className="bg-primary h-44 rounded-b-full md:rounded-b-2xl"></div>
+      <div className="flex justify-center mt-20 mr-5 ml-5 pl-5 pr-5 items-end space-x-10 md:space-x-0 md:p-5 overflow-x-hidden">
         {selectedClientIndex !== 0 && (
           <i
             className="ri-arrow-left-line text-4xl text-gray-600 cursor-pointer sm:hidden"
@@ -135,20 +135,20 @@ function ClientsList() {
           ></i>
         )}
 
-        <div className="grid grid-cols-3 gap-10 sm:grid-cols-1 sm:gap-2">
+        <div className="grid grid-cols-3 gap-10 lg:grid-cols-1 md:gap-2 r-5 pl-5">
           {[
             clients[selectedClientIndex],
             clients[selectedClientIndex + 1],
             clients[selectedClientIndex + 2],
           ].map((item, index) => (
-            <div key={index} className="bg-white shadow p-5 w-[400px] sm:w-auto sm:h-auto border h-[350px]">
-              <div className="flex space-x-10 sm:space-x-0 items-center justify-between sm:flex-col">
-                <img src={item.logo} alt="" className="h-32 w-32 z-20 sm:w-10 sm:h-10" />
+            <div key={index} className="bg-white shadow p-5 md:w-auto md:h-auto border h-[400px]">
+              <div className="flex space-x-10 md:space-x-0 items-center justify-between md:flex-col">
+                <img src={item.logo} alt={item.name} className="h-10 z-20 inline-flex" />
                 <h1 className="text-primary font-semibold text-xl">
                   {item.name}
                 </h1>
               </div>
-              <p className="text-gray-600 md:text-md mt-10">{item.description}</p>
+              <p className="overflow-y-scroll text-gray-600 md:text-md mt-5">{item.description}</p>
             </div>
           ))}
         </div>
