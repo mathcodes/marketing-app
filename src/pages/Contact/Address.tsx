@@ -38,7 +38,7 @@ function Address() {
           </div>
           <div>
             <h1 className="font-semibold text-xl">Call</h1>
-            <p>9989649278</p>
+            <p>(919) 368-3369</p>
           </div>
         </div>
       </div>
