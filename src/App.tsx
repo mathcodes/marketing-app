@@ -1,13 +1,14 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Clients from './pages/Clients';
-import About from './pages/About';
-import Contact from './pages/Contact';
+import { DevEyesProvider } from './context/DevEyesContext';
 import Home from './pages/Home';
+import About from './pages/About';
+import Clients from './pages/Clients';
+import Contact from './pages/Contact';
 
 function App(): React.ReactElement {
   return (
-    <div className='App'>
+    <DevEyesProvider>
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Home />} />
@@ -16,7 +17,7 @@ function App(): React.ReactElement {
           <Route path='/contact' element={<Contact />} />
         </Routes>
       </BrowserRouter>
-    </div>
+    </DevEyesProvider>
   );
 }
 

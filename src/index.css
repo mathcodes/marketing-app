@@ -1,68 +1,104 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
-
-*
-{
-  font-family: "Montserrat", sans-serif !important;
-}
-
-html,
-body
-{
-  overflow-x: hidden;
-}
-
-.about-intro
-{
-  background-color: #135d66;
-  background-image: linear-gradient(315deg, #135d66, #4faeba 74%);
-  overflow-x: hidden !important;
-  transform: rotate(12deg);
-  position: absolute;
-  top: -30%;
-  left: -100px;
-  right: 0;
-  border-radius: 50px
-}
-
-.keywords
-{
-  color: #4faeba;
-}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@media (max-width: 639px)
-{
-  .sm\:grid-cols-1
-  {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .sm\:scale-100
-  {
-    --tw-scale-x: 1;
-    --tw-scale-y: 1;
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  }
-
+/* ── Global ── */
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
-@media (max-width: 767px)
-{
-  .sm\:grid-cols-1
-  {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-  }
-  .sm\:max-w-sm {
-    max-width: 80%;
-}
+html, body {
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
-.sm\:scale-100
-{
-  --tw-scale-x: 1;
-  --tw-scale-y: 1;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+/* ── About page diagonal hero background ── */
+.about-intro {
+  background: linear-gradient(315deg, #135d66, #4eaeba 74%);
+  transform: rotate(12deg);
+  position: absolute;
+  top: -30%;
+  left: -100px;
+  right: 0;
+  border-radius: 50px;
+  overflow-x: hidden;
+}
+
+.keywords {
+  color: #4eaeba;
+}
+
+/* ── Dev Eyes system ── */
+.dev-eyes-wrapper {
+  position: relative;
+  outline: 1px dashed rgba(78, 174, 186, 0.45);
+  outline-offset: 2px;
+  transition: outline-color 0.2s;
+}
+
+.dev-eyes-wrapper:hover {
+  outline-color: rgba(78, 174, 186, 0.9);
+}
+
+.dev-eyes-popup {
+  position: fixed;
+  z-index: 9999;
+  overflow-y: auto;
+  background: #272822;
+  border: 1px solid #49483e;
+  border-radius: 8px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.65);
+  padding: 14px 18px;
+  pointer-events: none;
+}
+
+.dev-eyes-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #75715e;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #3e3d32;
+  padding-bottom: 6px;
+}
+
+.monokai-snippet {
+  margin: 0;
+  font-family: 'Cascadia Code', 'Fira Code', 'Consolas', 'Monaco', monospace !important;
+  font-size: 11.5px;
+  line-height: 1.65;
+  color: #f8f8f2;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.tok-tag      { color: #66d9e8; }
+.tok-component { color: #a6e22e; }
+.tok-attr     { color: #a6e22e; }
+.tok-str      { color: #e6db74; }
+.tok-kw       { color: #f92672; }
+.tok-num      { color: #ae81ff; }
+.tok-comment  { color: #75715e; font-style: italic; }
+
+.dev-eyes-toggle {
+  position: fixed;
+  bottom: 88px;
+  right: 18px;
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 16px;
+  border: 2px solid #4eaeba;
+  border-radius: 999px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
 }

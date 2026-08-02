@@ -1,88 +1,101 @@
-import React from "react";
+import React from 'react';
+import DevEyesTooltip from '../../components/DevEyesTooltip';
 
+const CODE = `// Contact/ContactForm.tsx — Message Form
 function ContactForm() {
-
-  const onClick = () => {
-    console.log("clicked");
-    // let Fname = document.getElementById("firstname") as HTMLInputElement;
-    // let Lname = document.getElementById("lastname") as HTMLInputElement;
-    // let email = document.getElementById("email") as HTMLInputElement;
-    // let phoneNum = document.getElementById("phoneNum") as HTMLInputElement;
-    // let message = document.getElementById("message") as HTMLInputElement;
-    // console.log(Fname.value);
-    // console.log(Lname.value);
-    // console.log(email.value);
-    // console.log(message.value);
-
-    // let data = {
-    //   firstName: Fname.value,
-    //   lastName: Lname.value,
-    //   email: email.value,
-    //   phoneNum: phoneNum.value,
-    //   message: message.value,
-    // };
-    // console.log(data);
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // TODO: wire up form submission
   };
 
   return (
-    <div>
-      <form className="flex flex-col space-y-10">
-        <h1 className="text-4xl font-semibold text-primary mb-5">
-          Send a Message
-        </h1>
+    <form onSubmit={handleSubmit} className="flex flex-col space-y-8">
+      <h2 className="text-4xl font-bold text-primary">Send a Message</h2>
+      <div className="flex space-x-6 lg:flex-col lg:space-y-6 lg:space-x-0">
+        <input name="firstname" type="text"
+          placeholder="First name" className="input-field" />
+        <input name="lastname" type="text"
+          placeholder="Last name" className="input-field" />
+      </div>
+      <input name="email" type="email"
+        placeholder="Email address" className="input-field" />
+      <textarea name="message" rows={5}
+        placeholder="Tell us something interesting..."
+        className="input-field resize-none" />
+      <button type="submit"
+        className="py-4 bg-secondary text-white font-semibold
+          rounded-xl hover:bg-primary transition-colors duration-200">
+        Launch Message →
+      </button>
+    </form>
+  );
+}`;
 
-        <div className="flex space-x-10 lg:flex-col lg:space-y-10 lg:space-x-0">
+const inputClass = 'py-3 px-5 bg-gray-50 border border-gray-200 focus:outline-none focus:border-primary rounded-xl text-gray-700 w-full transition-colors duration-200';
+
+function ContactForm() {
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+  };
+
+  return (
+    <DevEyesTooltip label='Contact / Message Form' code={CODE}>
+      <form onSubmit={handleSubmit} className='flex flex-col space-y-6'>
+        <h2 className='text-4xl font-bold text-primary'>Send a Message</h2>
+        <p className='text-gray-400 text-sm -mt-2'>
+          We read every message. (Mostly. The really long ones get skimmed. Sorry.)
+        </p>
+
+        <div className='flex space-x-6 lg:flex-col lg:space-y-6 lg:space-x-0'>
           <input
-            id="firstname"
-            name="firstname"
-            type="text"
-            placeholder="First name"
-            className=" py-3 px-5 bg-blue-50 focus:outline-none rounded-lg text-gray-500 w-full"
+            id='firstname'
+            name='firstname'
+            type='text'
+            placeholder='First name'
+            className={inputClass}
           />
-
           <input
-            id="lastname"
-            name="lastname"
-            type="text"
-            placeholder="Last name"
-            className=" py-3 px-5 bg-blue-50 focus:outline-none rounded-lg text-gray-500 w-full"
+            id='lastname'
+            name='lastname'
+            type='text'
+            placeholder='Last name'
+            className={inputClass}
           />
         </div>
 
-        <div className="flex space-x-10 lg:flex-col lg:space-y-10 lg:space-x-0">
+        <div className='flex space-x-6 lg:flex-col lg:space-y-6 lg:space-x-0'>
           <input
-            id="email"
-            name="email"
-            type="text"
-            placeholder="Email"
-            className=" py-3 px-5 bg-blue-50 focus:outline-none rounded-lg text-gray-500 w-full"
+            id='email'
+            name='email'
+            type='email'
+            placeholder='Email address'
+            className={inputClass}
           />
-
           <input
-            id="phoneNum"
-            name="phoneNum"
-            type="text"
-            placeholder="Phone #"
-            className=" py-3 px-5 bg-blue-50 focus:outline-none rounded-lg text-gray- w-full"
+            id='phoneNum'
+            name='phoneNum'
+            type='tel'
+            placeholder='Phone number'
+            className={inputClass}
           />
         </div>
 
-        <div className="flex space-x-10">
-          <textarea
-            id="message"
-            name="message"
-            rows={5}
-            placeholder="Message"
-            className=" py-3 px-5 bg-blue-50 focus:outline-none rounded-lg text-gray-500 w-full"
-          />
-        </div>
+        <textarea
+          id='message'
+          name='message'
+          rows={5}
+          placeholder='Tell us something interesting...'
+          className={`${inputClass} resize-none`}
+        />
 
-        <div className="flex justify-left">
-          <button onClick={onClick} className='text-white bg-secondary rounded h-20 px-10 w-full'>Send A Message</button>
-        </div>
-
+        <button
+          type='submit'
+          className='py-4 bg-secondary text-white font-semibold rounded-xl hover:bg-primary transition-colors duration-200 w-full'
+        >
+          Launch Message →
+        </button>
       </form>
-    </div>
+    </DevEyesTooltip>
   );
 }
 
