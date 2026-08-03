@@ -2,21 +2,6 @@ import React from 'react';
 import Modal from '../../components/Modal';
 import DevEyesTooltip from '../../components/DevEyesTooltip';
 
-const CARD_CODE = `// Strategy Card
-<article className="card p-6 flex flex-col gap-5">
-  <div className="h-12 w-12 rounded-lg bg-primary/10
-    flex items-center justify-center">
-    <img src={item.image} alt={item.title}
-      className="h-7 w-7 object-contain" />
-  </div>
-  <div>
-    <h3 className="heading-3 mb-2">{item.title}</h3>
-    <p className="body line-clamp-3">{item.description}</p>
-  </div>
-  <Modal title={item.title} image={item.image}
-    descr={item.description} />
-</article>`;
-
 const strategies = [
   {
     title: 'Content Sorcery',
@@ -49,13 +34,7 @@ function MarketingStrategies() {
     <section className='section' style={{ borderTop: '1px solid #f3f4f6' }}>
       <div className='container-app'>
         {/* Section header */}
-        <DevEyesTooltip label='Home / Section Header' code={`<div className="mb-12">
-  <p className="eyebrow mb-3">What we do</p>
-  <h2 className="heading-1">The pixel power is real.</h2>
-  <p className="body-lg mt-4 max-w-xl">
-    Four flavors of marketing magic...
-  </p>
-</div>`}>
+        <DevEyesTooltip label='Home / Section Header'>
           <div className='mb-12 md:mb-8'>
             <p className='eyebrow mb-3'>What we do</p>
             <h2 className='heading-1 mb-4'>The pixel power is real.</h2>
@@ -69,7 +48,7 @@ function MarketingStrategies() {
         {/* Cards grid */}
         <div className='grid grid-cols-2 md:grid-cols-1 gap-6'>
           {strategies.map((item) => (
-            <DevEyesTooltip key={item.title} label='Strategy Card' code={CARD_CODE}>
+            <DevEyesTooltip key={item.title} label='Strategy Card'>
               <article className='card p-6 flex flex-col gap-5'>
                 <div
                   className='h-12 w-12 rounded-lg flex items-center justify-center flex-shrink-0'

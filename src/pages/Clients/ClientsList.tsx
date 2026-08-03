@@ -2,16 +2,6 @@ import React, { useState } from 'react';
 import Numbers from './Numbers';
 import DevEyesTooltip from '../../components/DevEyesTooltip';
 
-const CARD_CODE = `// Client Card
-<article className="card p-6 flex flex-col gap-4">
-  <div className="flex items-center gap-3">
-    <img src={item.logo} alt={item.name}
-      className="h-8 w-8 object-contain flex-shrink-0" />
-    <h3 className="heading-3">{item.name}</h3>
-  </div>
-  <p className="body flex-1">{item.description}</p>
-</article>`;
-
 const clients = [
   { id: 0,  name: 'PixelBarn Studios',   logo: 'https://www.jonchristie.net/favicon.png',         description: 'A creative agency that exclusively designs logos that look like friendly dragons. We doubled their conversion rate by making the dragons 12% friendlier.' },
   { id: 1,  name: 'Caffeine Labs Inc.',   logo: 'https://www.microsoft.com/favicon.ico',            description: 'They run on cold brew and shipped 43 features before you finished your morning coffee. We built their product page — it now converts at a rate that makes investors cry.' },
@@ -69,7 +59,7 @@ function ClientsList() {
           {/* Client cards */}
           <div className='grid grid-cols-3 lg:grid-cols-1 gap-6'>
             {visible.map((item) => (
-              <DevEyesTooltip key={item.id} label='Client Card' code={CARD_CODE}>
+              <DevEyesTooltip key={item.id} label='Client Card'>
                 <article className='card p-6 flex flex-col gap-4'>
                   <div className='flex items-center gap-3'>
                     <div

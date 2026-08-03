@@ -2,21 +2,6 @@ import React from 'react';
 import lottie from 'lottie-web';
 import DevEyesTooltip from '../../components/DevEyesTooltip';
 
-const CODE = `// Home/WhyMarketing.tsx
-<section className="section" style={{ background: '#f9fafb' }}>
-  <div className="container-app">
-    <div className="grid grid-cols-2 md:grid-cols-1 gap-16 items-center">
-      <div ref={containerRef} className="h-80 md:h-60 sm:h-48" />
-      <div>
-        <p className="eyebrow mb-3">The case for pixel power</p>
-        <h2 className="heading-1 mb-6">Why PixelPusher?</h2>
-        <p className="body-lg mb-6">...</p>
-        <p className="body">...</p>
-      </div>
-    </div>
-  </div>
-</section>`;
-
 function WhyMarketing() {
   const containerRef = React.useRef<HTMLDivElement | null>(null);
 
@@ -33,7 +18,7 @@ function WhyMarketing() {
   }, []);
 
   return (
-    <DevEyesTooltip label='Home / Why Section' code={CODE}>
+    <DevEyesTooltip label='Home / Why Section'>
       <section className='section' style={{ background: '#f9fafb', borderTop: '1px solid #f3f4f6' }}>
         <div className='container-app'>
           <div className='grid grid-cols-2 md:grid-cols-1 gap-16 md:gap-10 items-center'>

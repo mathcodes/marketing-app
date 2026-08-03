@@ -1,17 +1,6 @@
 import React from 'react';
 import DevEyesTooltip from '../../components/DevEyesTooltip';
 
-const CARD_CODE = `// Service Card
-<article className="card p-6 flex flex-col gap-4">
-  <div className="h-11 w-11 rounded-lg bg-primary/10
-    flex items-center justify-center">
-    <img src={item.icon} alt={item.title}
-      className="h-6 w-6 object-contain" />
-  </div>
-  <h3 className="heading-3">{item.title}</h3>
-  <p className="body">{item.description}</p>
-</article>`;
-
 const items = [
   {
     title: 'App Alchemy',
@@ -38,10 +27,7 @@ const items = [
 const Services: React.FC = () => (
   <section className='section'>
     <div className='container-app'>
-      <DevEyesTooltip label='About / Services Header' code={`<div className="mb-12">
-  <p className="eyebrow mb-3">What we offer</p>
-  <h2 className="heading-1">Services</h2>
-</div>`}>
+      <DevEyesTooltip label='About / Services Header'>
         <div className='mb-12 md:mb-8'>
           <p className='eyebrow mb-3'>What we offer</p>
           <h2 className='heading-1'>Services</h2>
@@ -50,7 +36,7 @@ const Services: React.FC = () => (
 
       <div className='grid grid-cols-4 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-6'>
         {items.map((item) => (
-          <DevEyesTooltip key={item.title} label='Service Card' code={CARD_CODE}>
+          <DevEyesTooltip key={item.title} label='Service Card'>
             <article className='card p-6 flex flex-col gap-4'>
               <div
                 className='h-11 w-11 rounded-lg flex items-center justify-center flex-shrink-0'
