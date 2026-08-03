@@ -1,52 +1,68 @@
-import React from "react";
+import React from 'react';
+import DevEyesTooltip from '../../components/DevEyesTooltip';
 
-interface ServicesProps {
-  // Declare any props that the component will receive here
-}
+const CARD_CODE = `// About/Services.tsx — Service Card
+{items.map((item) => (
+  <div className="p-6 bg-white border shadow-sm flex flex-col
+    space-y-4 items-center hover:shadow-lg hover:-translate-y-1
+    transition-all duration-300">
+    <img src={item.icon} className="h-16 w-16 object-contain" />
+    <h2 className="text-xl font-semibold text-secondary">
+      {item.title}
+    </h2>
+    <p className="text-gray-500 text-sm text-center leading-relaxed">
+      {item.description}
+    </p>
+  </div>
+))}`;
 
-const Services: React.FC<ServicesProps> = (props: ServicesProps) => {
-  const items = [
-    {
-      title: "Web Development",
-      icon: "images/arrows.png",
-      description:
-        "Web development is the work involved in developing a website for the Internet or an intranet.",
-    },
-    {
-      title: "Mobile Development",
-      icon: "images/people.png",
-      description:
-        "Mobile development is the work involved in developing a mobile application for mobile devices such as smartphones, tablets, and feature phones.",
-    },
-    {
-      title: "Digital Marketing",
-      icon: "images/digitalmarketing.png",
-      description:
-        "Digital marketing is the work involved in developing a digital marketing strategy and developing a digital marketing plan.",
-    },
+const items = [
+  {
+    title: 'App Alchemy',
+    icon: 'images/arrows.png',
+    description: 'We turn vague feature requests and napkin sketches into production-ready apps. Warning: side effects include impressed stakeholders.',
+  },
+  {
+    title: 'Brand Sorcery',
+    icon: 'images/people.png',
+    description: 'Your brand is more than a logo — it\'s the vibe, the fonts, the inexplicable reason people trust you. We craft that from scratch or rescue it from design purgatory.',
+  },
+  {
+    title: 'Growth Hacking™',
+    icon: 'images/digitalmarketing.png',
+    description: 'Data-driven campaigns that actually convert. We skip the buzzword bingo and focus on the metrics that pay the bills. You\'re welcome.',
+  },
+  {
+    title: 'Visual Wizardry',
+    icon: 'images/store.png',
+    description: 'From UI mockups to motion graphics, we make pixels look intentional. Every design decision is defensible. Every pixel is placed on purpose.',
+  },
+];
 
-    {
-      title: "Graphic Design",
-      icon: "images/store.png",
-      description:
-        "Graphic design is the work involved in developing a digital marketing strategy and developing a digital marketing plan.",
-    },
-  ];
-  return (
-    <div className="z-20 sm:mt-10">
-      <h1 className='text-secondary text-8xl text-center z-20 font-semibold sm:text-5xl'>Services</h1>
-      <div className='h-96 w-full bg-primary mt-12'></div>
-      <div className="grid grid-cols-4 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-10 mx-32 sm:mx-0 -mt-48 sm:w-full sm:px-5">
-        {items.map((item) => (
-          <div className="p-5 bg-white border shadow flex flex-col space-y-5 items-center transform hover:scale-105 duration-300 sm:selection:w-full">
-            <img src={item.icon} className="h-20 w-20" />
-            <h1 className='text-2xl'>{item.title}</h1>
-            <p className='text-gray-600 text-md'>{item.description}</p>
-          </div>
-        ))}
+const Services: React.FC = () => (
+  <div className='z-20 sm:mt-10'>
+    <DevEyesTooltip label='About / Services Heading' code={`<h1 className="text-secondary text-8xl text-center z-20 font-bold sm:text-5xl">
+  Services
+</h1>
+<div className="h-96 w-full bg-primary mt-12" />`}>
+      <div>
+        <h1 className='text-secondary text-8xl text-center z-20 font-bold sm:text-5xl'>Services</h1>
+        <div className='h-96 w-full bg-primary mt-12' />
       </div>
+    </DevEyesTooltip>
+
+    <div className='grid grid-cols-4 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-8 mx-32 sm:mx-0 -mt-48 sm:w-full sm:px-5'>
+      {items.map((item) => (
+        <DevEyesTooltip key={item.title} label='Service Card' code={CARD_CODE}>
+          <div className='p-6 bg-white border shadow-sm flex flex-col space-y-4 items-center hover:shadow-xl hover:-translate-y-1 transition-all duration-300'>
+            <img src={item.icon} alt={item.title} className='h-16 w-16 object-contain' />
+            <h2 className='text-xl font-semibold text-secondary text-center'>{item.title}</h2>
+            <p className='text-gray-500 text-sm text-center leading-relaxed'>{item.description}</p>
+          </div>
+        </DevEyesTooltip>
+      ))}
     </div>
-  );
-};
+  </div>
+);
 
 export default Services;

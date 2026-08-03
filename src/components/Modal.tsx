@@ -1,75 +1,71 @@
-import { Fragment, useState } from 'react'
-import { Dialog, Transition } from '@headlessui/react'
-import { CheckIcon } from '@heroicons/react/24/outline'
+import React, { Fragment, useState } from 'react';
+import { Dialog, Transition } from '@headlessui/react';
 
 type ModalProps = {
-  title: string
-  image: string
-  descr: string
-}
+  title: string;
+  image: string;
+  descr: string;
+};
 
 export default function Modal({ title, image, descr }: ModalProps) {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
 
   return (
     <>
-        <button onClick={() => setOpen(true)}>Details</button>
-    <Transition.Root show={open} as={Fragment}>
-      <Dialog as="div" className="relative z-10" onClose={setOpen}>
-        <Transition.Child
-          as={Fragment}
-          enter="ease-out duration-300"
-          enterFrom="opacity-0"
-          enterTo="opacity-100"
-          leave="ease-in duration-200"
-          leaveFrom="opacity-100"
-          leaveTo="opacity-0"
-        >
-          <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
-        </Transition.Child>
+      <button
+        onClick={() => setOpen(true)}
+        className='text-sm font-semibold text-primary border border-primary px-5 py-2 rounded hover:bg-primary hover:text-white transition-colors duration-200 max-w-max'
+      >
+        Learn More →
+      </button>
 
-        <div className="fixed inset-0 z-10 overflow-y-auto">
-          <div className="flex min-h-full items-center justify-center p-4 text-center sm:items-center sm:p-0">
-            <Transition.Child
-              as={Fragment}
-              enter="ease-out duration-300"
-              enterFrom="opacity-0 translate-y-4 sm:translate-y-0 md:scale-95"
-              enterTo="opacity-100 translate-y-50% md:scale-100"
-              leave="ease-in duration-200"
-              leaveFrom="opacity-100 translate-y-0 md:scale-100"
-              leaveTo="opacity-0 translate-y-4 sm:translate-y-0 md:scale-95"
-            >
-              <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 md:w-full md:max-w-sm sm:p-6">
-                <div>
-                  <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-green-100">
-                    <img src={image} className="h-12 w-12" />
-                  </div>
-                  <div className="mt-3 text-center sm:mt-5">
-                    <Dialog.Title as="h3" className="text-lg font-medium leading-6 text-gray-900">
+      <Transition.Root show={open} as={Fragment}>
+        <Dialog as='div' className='relative z-50' onClose={setOpen}>
+          <Transition.Child
+            as={Fragment}
+            enter='ease-out duration-200'
+            enterFrom='opacity-0'
+            enterTo='opacity-100'
+            leave='ease-in duration-150'
+            leaveFrom='opacity-100'
+            leaveTo='opacity-0'
+          >
+            <div className='fixed inset-0 bg-black/60 transition-opacity' />
+          </Transition.Child>
+
+          <div className='fixed inset-0 z-10 overflow-y-auto'>
+            <div className='flex min-h-full items-center justify-center p-4'>
+              <Transition.Child
+                as={Fragment}
+                enter='ease-out duration-200'
+                enterFrom='opacity-0 scale-95'
+                enterTo='opacity-100 scale-100'
+                leave='ease-in duration-150'
+                leaveFrom='opacity-100 scale-100'
+                leaveTo='opacity-0 scale-95'
+              >
+                <Dialog.Panel className='relative w-full max-w-sm rounded-2xl bg-white p-8 shadow-2xl'>
+                  <div className='flex flex-col items-center text-center space-y-4'>
+                    <div className='h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center'>
+                      <img src={image} alt={title} className='h-10 w-10 object-contain' />
+                    </div>
+                    <Dialog.Title as='h3' className='text-xl font-semibold text-secondary'>
                       {title}
                     </Dialog.Title>
-                    <div className="mt-2">
-                      <p className="text-sm text-gray-500">
-                        {descr}
-                      </p>
-                    </div>
+                    <p className='text-gray-500 text-sm leading-relaxed'>{descr}</p>
                   </div>
-                </div>
-                <div className="mt-5 sm:mt-6">
                   <button
-                    type="button"
-                    className="inline-flex w-full justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:text-sm"
                     onClick={() => setOpen(false)}
+                    className='mt-7 w-full py-3 rounded-xl bg-secondary text-white font-semibold hover:bg-primary transition-colors duration-200'
                   >
-                    Close
+                    Got it
                   </button>
-                </div>
-              </Dialog.Panel>
-            </Transition.Child>
+                </Dialog.Panel>
+              </Transition.Child>
+            </div>
           </div>
-        </div>
-      </Dialog>
-    </Transition.Root>
+        </Dialog>
+      </Transition.Root>
     </>
-  )
+  );
 }

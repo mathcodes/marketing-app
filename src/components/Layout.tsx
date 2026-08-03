@@ -1,5 +1,6 @@
-import * as React from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import DevEyesToggle from './DevEyesToggle';
 
 type MenuItem = {
   id: number;
@@ -8,83 +9,68 @@ type MenuItem = {
   icon: string;
 };
 
+const menuItems: MenuItem[] = [
+  { id: 0, title: 'Home',    path: '/',        icon: 'ri-home-smile-line' },
+  { id: 1, title: 'About',   path: '/about',   icon: 'ri-user-line' },
+  { id: 2, title: 'Clients', path: '/clients', icon: 'ri-team-line' },
+  { id: 3, title: 'Contact', path: '/contact', icon: 'ri-mail-send-line' },
+];
+
 interface LayoutProps {
   children: React.ReactNode;
 }
 
 function Layout({ children }: LayoutProps): React.ReactElement {
   const location = useLocation();
-  const navigate = useNavigate();
-  const menuItems: MenuItem[] = [
-    {
-      id: 0,
-      title: 'Home',
-      path: '/',
-      icon: 'ri-home-smile-line',
-    },
-    {
-      id: 1,
-      title: 'About',
-      path: '/about',
-      icon: 'ri-information-line',
-    },
-    {
-      id: 2,
-      title: 'Clients',
-      path: '/clients',
-      icon: 'ri-user-location-fill',
-    },
-    {
-      id: 3,
-      title: 'Contact',
-      path: '/contact',
-      icon: 'ri-contacts-fill',
-    },
-  ];
 
   return (
     <div>
-      {/* content */}
-      
-      <div className='pb-44 overflow-x-hidden'>{children}</div>
+      <div className='pb-28 overflow-x-hidden'>{children}</div>
 
-    
-      {/* footer */}
-      <div className='fixed bottom-0 left-0 right-0 sm:bottom-0'>
-        <div className='flex w-full justify-center'>
-          {menuItems.map((item, index) => (
-            <div key={item.id} className='flex flex-col justify-end items-center'>
-              {location.pathname === item.path && (
-                <div className='flex flex-col items-center'>
-                  <div className='h-1 w-20 bg-primary'></div>
-                  <div className='h-1 w-20 bg-primary2'></div>
-                  {/* <div className='h-5 w-20 bg-primary rounded-t-full text-center'> */}
-                  </div>
-                // </div>
-              )}
-              <div
-                className={`px-20 sm:px-8 bg-primary py-5 ${index === 0 && 'rounded-l'
-                  } ${index === menuItems.length - 1 && 'rounded-r'
-                  } flex items-center justify-center space-x-2`}
+      <DevEyesToggle />
+
+      {/* Bottom nav */}
+      <nav className='fixed bottom-0 left-0 right-0 z-50'>
+        <div
+          className='flex justify-center'
+          style={{
+            background: 'rgba(30,30,30,0.85)',
+            backdropFilter: 'blur(12px)',
+            WebkitBackdropFilter: 'blur(12px)',
+            borderTop: '1px solid rgba(78,174,186,0.2)',
+          }}
+        >
+          {menuItems.map((item) => {
+            const active = location.pathname === item.path;
+            return (
+              <Link
+                key={item.id}
+                to={item.path}
+                className='flex flex-col items-center justify-center py-3 px-8 sm:px-5 relative transition-all duration-200 group'
+                style={{ minWidth: 72 }}
               >
-                {location.pathname !== item.path && (
-                  <i
-                    onClick={() => navigate(item.path)}
-                    className={`${item.icon} text-secondary text-xl`}
-                  ></i>
+                {active && (
+                  <span
+                    className='absolute top-0 left-1/2 -translate-x-1/2 h-0.5 w-10 bg-primary rounded-b-full'
+                  />
                 )}
-                <Link
-                  to={`${item.path}`}
-                  className={`text-secondary text-xl ${item.path !== location.pathname && 'sm:hidden'
-                    } `}
+                <i
+                  className={`${item.icon} text-2xl transition-colors duration-200 ${
+                    active ? 'text-primary' : 'text-gray-400 group-hover:text-primary'
+                  }`}
+                />
+                <span
+                  className={`text-xs mt-0.5 font-medium transition-colors duration-200 ${
+                    active ? 'text-primary' : 'text-gray-500 group-hover:text-gray-300'
+                  }`}
                 >
                   {item.title}
-                </Link>
-              </div>
-            </div>
-          ))}
+                </span>
+              </Link>
+            );
+          })}
         </div>
-      </div>
+      </nav>
     </div>
   );
 }

@@ -1,15 +1,15 @@
-import React from 'react'
-import Layout from '../../components/Layout'
-import ClientsList from './ClientsList'
-import Intro from './Intro'
+import React from 'react';
+import Layout from '../../components/Layout';
+import Intro from './Intro';
+import ClientsList from './ClientsList';
 
-function Clients(): React.ReactElement{
+function Clients(): React.ReactElement {
   return (
     <Layout>
-        <Intro />
-        <ClientsList/>
+      <Intro />
+      <ClientsList />
     </Layout>
-  )
+  );
 }
 
-export default Clients
+export default Clients;
