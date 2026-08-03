@@ -1,53 +1,50 @@
 import React from 'react';
 import DevEyesTooltip from '../../components/DevEyesTooltip';
 
-const CODE = `// Clients/Numbers.tsx — Stats Bar
-function Numbers() {
-  return (
-    <div className="px-52 sm:px-5 mt-16">
-      <p className="text-xl text-gray-500 my-5 font-medium">
-        Numbers don't lie (we checked) ↓
-      </p>
-      <div className="bg-secondary flex justify-between p-8
-        rounded-2xl md:flex-col md:space-y-8">
-        {stats.map(({ value, label }) => (
-          <div key={label} className="flex flex-col space-y-1">
-            <span className="text-4xl font-bold text-white">
-              {value}
-            </span>
-            <span className="text-primary text-xl font-medium">
-              {label}
-            </span>
-          </div>
-        ))}
-      </div>
+const CODE = `// Clients/Numbers.tsx — Stats row
+<section style={{ background: '#1e1e1e' }}>
+  <div className="container-app py-16">
+    <p className="eyebrow mb-10" style={{ color: '#4eaeba' }}>
+      Numbers don't lie (we checked)
+    </p>
+    <div className="grid grid-cols-4 md:grid-cols-2 gap-8">
+      {stats.map(({ value, label }) => (
+        <div key={label} className="flex flex-col gap-1">
+          <span className="display text-white">{value}</span>
+          <span className="eyebrow" style={{ color: '#4eaeba' }}>
+            {label}
+          </span>
+        </div>
+      ))}
     </div>
-  );
-}`;
+  </div>
+</section>`;
 
 const stats = [
-  { value: '3,023', label: 'Happy Clients' },
-  { value: '412',   label: 'Projects Shipped' },
-  { value: '82',    label: 'Global Locations' },
-  { value: '0',     label: 'Regrets' },
+  { value: '3,023', label: 'Happy Clients'     },
+  { value: '412',   label: 'Projects Shipped'  },
+  { value: '82',    label: 'Global Locations'  },
+  { value: '0',     label: 'Regrets'           },
 ];
 
 function Numbers() {
   return (
-    <DevEyesTooltip label='Clients / Stats Bar' code={CODE}>
-      <div className='px-52 sm:px-5 mt-16'>
-        <p className='text-xl text-gray-500 my-5 font-medium'>
-          Numbers don't lie (we checked) ↓
-        </p>
-        <div className='bg-secondary flex space-x-10 md:space-x-0 p-8 justify-between rounded-2xl md:flex-col md:items-start md:space-y-8'>
-          {stats.map(({ value, label }) => (
-            <div key={label} className='flex flex-col space-y-1'>
-              <span className='lg:text-3xl text-4xl font-bold text-white'>{value}</span>
-              <span className='text-primary text-xl font-medium'>{label}</span>
-            </div>
-          ))}
+    <DevEyesTooltip label='Clients / Stats' code={CODE}>
+      <section style={{ background: '#1e1e1e' }}>
+        <div className='container-app py-16 md:py-12'>
+          <p className='eyebrow mb-10 md:mb-8' style={{ color: '#4eaeba' }}>
+            Numbers don't lie (we checked)
+          </p>
+          <div className='grid grid-cols-4 md:grid-cols-2 sm:grid-cols-2 gap-8 sm:gap-6'>
+            {stats.map(({ value, label }) => (
+              <div key={label} className='flex flex-col gap-1'>
+                <span className='display text-white'>{value}</span>
+                <span className='eyebrow' style={{ color: '#4eaeba' }}>{label}</span>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+      </section>
     </DevEyesTooltip>
   );
 }

@@ -7,11 +7,9 @@ import WhyMarketing from './WhyMarketing';
 function Home() {
   return (
     <Layout>
-      <div className='px-32 sm:px-4 md:px-8'>
-        <Intro />
-        <MarketingStrategies />
-        <WhyMarketing />
-      </div>
+      <Intro />
+      <MarketingStrategies />
+      <WhyMarketing />
     </Layout>
   );
 }

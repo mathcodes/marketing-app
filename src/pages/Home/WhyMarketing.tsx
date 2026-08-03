@@ -2,20 +2,20 @@ import React from 'react';
 import lottie from 'lottie-web';
 import DevEyesTooltip from '../../components/DevEyesTooltip';
 
-const CODE = `// Home/WhyMarketing.tsx — Why Section
-function WhyMarketing() {
-  return (
-    <div className="mt-24">
-      <h1 className="text-center text-8xl font-bold text-primary sm:text-5xl">
-        Why <b className="text-secondary">Pixel Power</b>?
-      </h1>
-      <div ref={containerRef} className="h-[500px]" />
-      <p className="text-gray-500 text-lg mt-8 leading-relaxed">
-        Because vibes aren't a marketing strategy...
-      </p>
+const CODE = `// Home/WhyMarketing.tsx
+<section className="section" style={{ background: '#f9fafb' }}>
+  <div className="container-app">
+    <div className="grid grid-cols-2 md:grid-cols-1 gap-16 items-center">
+      <div ref={containerRef} className="h-80 md:h-60 sm:h-48" />
+      <div>
+        <p className="eyebrow mb-3">The case for pixel power</p>
+        <h2 className="heading-1 mb-6">Why PixelPusher?</h2>
+        <p className="body-lg mb-6">...</p>
+        <p className="body">...</p>
+      </div>
     </div>
-  );
-}`;
+  </div>
+</section>`;
 
 function WhyMarketing() {
   const containerRef = React.useRef<HTMLDivElement | null>(null);
@@ -34,25 +34,31 @@ function WhyMarketing() {
 
   return (
     <DevEyesTooltip label='Home / Why Section' code={CODE}>
-      <div className='mt-24'>
-        <h1 className='text-center text-8xl font-bold text-primary sm:text-5xl leading-tight'>
-          Why{' '}
-          <b className='text-secondary'>Pixel Power</b>?
-        </h1>
-        <div ref={containerRef} className='h-[500px] sm:h-64' />
-        <p className='text-gray-500 text-lg mt-8 leading-relaxed max-w-3xl mx-auto text-center'>
-          Because "vibes" isn't a marketing strategy. Data-backed campaigns, pixel-perfect creative, and
-          strategies that don't require crossing your fingers — that's the PixelPusher difference.
-        </p>
-        <h2 className='text-primary text-4xl font-bold mt-14 sm:text-2xl'>
-          Every pixel placed with purpose.
-        </h2>
-        <p className='text-gray-500 text-lg mt-6 leading-relaxed max-w-2xl'>
-          From the first touchpoint to the final conversion, we obsess over the details so your
-          audience notices the results. Bold ideas, measurable outcomes, zero Lorem Ipsum.
-          Well — almost zero. We're working on it.
-        </p>
-      </div>
+      <section className='section' style={{ background: '#f9fafb', borderTop: '1px solid #f3f4f6' }}>
+        <div className='container-app'>
+          <div className='grid grid-cols-2 md:grid-cols-1 gap-16 md:gap-10 items-center'>
+            {/* Animation */}
+            <div ref={containerRef} className='h-80 md:h-60 sm:h-48 md:order-last' />
+            {/* Copy */}
+            <div>
+              <p className='eyebrow mb-3'>The case for pixel power</p>
+              <h2 className='heading-1 mb-6'>Why PixelPusher?</h2>
+              <p className='body-lg mb-5'>
+                Because "vibes" isn't a marketing strategy. Data-backed campaigns, pixel-perfect
+                creative, and strategies that don't require crossing your fingers.
+              </p>
+              <p className='body'>
+                From the first touchpoint to the final conversion, we obsess over the details so
+                your audience notices the results. Bold ideas. Measurable outcomes. Zero Lorem Ipsum
+                — well, almost zero. We're still working on the last 0.3%.
+              </p>
+              <button className='btn-primary mt-8'>
+                Start a Project <i className='ri-arrow-right-line' />
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
     </DevEyesTooltip>
   );
 }

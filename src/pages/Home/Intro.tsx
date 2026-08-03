@@ -2,29 +2,27 @@ import React from 'react';
 import lottie from 'lottie-web';
 import DevEyesTooltip from '../../components/DevEyesTooltip';
 
-const CODE = `// Home/Intro.tsx — Hero Section
-function Intro() {
-  return (
-    <div className="grid grid-cols-2 sm:grid-cols-1
-      h-screen items-center sm:mt-20">
-      <div className="flex flex-col space-y-8">
-        <h1 className="text-7xl font-bold text-primary sm:text-5xl">
-          PIXELPUSHER
-          <br />
-          <b className="text-secondary">CO.</b>
-        </h1>
-        <p className="text-2xl text-gray-500 leading-relaxed">
-          We make the internet look less terrible.
-        </p>
-        <button className="px-10 py-4 bg-secondary text-white
-          text-lg max-w-max hover:bg-primary transition-colors">
-          Let's Work Together →
-        </button>
+const CODE = `// Home/Intro.tsx — Hero
+<section className="min-h-screen flex items-center">
+  <div className="container-app w-full grid grid-cols-2
+    md:grid-cols-1 gap-16 md:gap-8 items-center py-20 md:py-16">
+    <div>
+      <p className="eyebrow mb-4">Award-winning creative studio</p>
+      <h1 className="display">
+        PixelPusher <span className="text-primary">Co.</span>
+      </h1>
+      <p className="body-lg mt-6 max-w-md">
+        We make the internet look less terrible. Bold ideas,
+        measurable outcomes, zero compromise.
+      </p>
+      <div className="mt-8 flex items-center gap-4 sm:flex-col">
+        <button className="btn-primary">Let's Work Together</button>
+        <button className="btn-ghost">See Our Work</button>
       </div>
-      <div ref={containerRef} className="h-[500px] p-10" />
     </div>
-  );
-}`;
+    <div ref={containerRef} className="h-96 md:h-72 sm:h-56" />
+  </div>
+</section>`;
 
 function Intro() {
   const containerRef = React.useRef<HTMLDivElement | null>(null);
@@ -42,24 +40,30 @@ function Intro() {
   }, []);
 
   return (
-    <DevEyesTooltip label='Home / Intro' code={CODE}>
-      <div className='grid grid-cols-2 sm:grid-cols-1 h-screen items-center sm:mt-20'>
-        <div className='flex flex-col space-y-8'>
-          <h1 className='text-7xl font-bold text-primary sm:text-5xl leading-tight'>
-            PIXELPUSHER
-            <br />
-            <b className='text-secondary'>CO.</b>
-          </h1>
-          <p className='text-2xl text-gray-500 leading-relaxed sm:text-lg'>
-            We make the internet look&nbsp;
-            <span className='text-primary font-semibold'>less terrible.</span>
-          </p>
-          <button className='px-10 py-4 bg-secondary text-white text-lg max-w-max hover:bg-primary transition-colors duration-200 rounded-sm'>
-            Let's Work Together →
-          </button>
+    <DevEyesTooltip label='Home / Hero' code={CODE}>
+      <section className='min-h-screen flex items-center'>
+        <div className='container-app w-full grid grid-cols-2 md:grid-cols-1 gap-16 md:gap-8 items-center py-20 md:py-16'>
+          <div>
+            <p className='eyebrow mb-4'>Award-winning creative studio</p>
+            <h1 className='display'>
+              PixelPusher{' '}
+              <span style={{ color: '#4eaeba' }}>Co.</span>
+            </h1>
+            <p className='body-lg mt-6 max-w-md'>
+              We make the internet look less terrible. Bold ideas, measurable outcomes, zero compromise.
+            </p>
+            <div className='mt-8 flex items-center gap-4 sm:flex-col sm:items-start'>
+              <button className='btn-primary'>
+                Let's Work Together
+              </button>
+              <button className='btn-ghost'>
+                See Our Work <i className='ri-arrow-right-line' />
+              </button>
+            </div>
+          </div>
+          <div ref={containerRef} className='h-96 md:h-72 sm:h-56' />
         </div>
-        <div ref={containerRef} className='h-[500px] p-10 sm:h-64 sm:p-4' />
-      </div>
+      </section>
     </DevEyesTooltip>
   );
 }

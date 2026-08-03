@@ -2,85 +2,92 @@ import React from 'react';
 import Modal from '../../components/Modal';
 import DevEyesTooltip from '../../components/DevEyesTooltip';
 
-const SECTION_CODE = `// Home/MarketingStrategies.tsx — Strategy Cards
-{strategies.map((item) => (
-  <div className="border border-primary p-6 flex flex-col
-    space-y-6 rounded-xl hover:shadow-lg transition-shadow">
-    <h2 className="text-center -mt-9 bg-white border border-primary
-      text-sm font-semibold rounded-lg text-secondary py-2 mx-8">
-      {item.title}
-    </h2>
+const CARD_CODE = `// Strategy Card
+<article className="card p-6 flex flex-col gap-5">
+  <div className="h-12 w-12 rounded-lg bg-primary/10
+    flex items-center justify-center">
     <img src={item.image} alt={item.title}
-      className="m-auto h-20 w-20 object-contain" />
-    <Modal title={item.title} image={item.image}
-      descr={item.description} />
+      className="h-7 w-7 object-contain" />
   </div>
-))}`;
+  <div>
+    <h3 className="heading-3 mb-2">{item.title}</h3>
+    <p className="body line-clamp-3">{item.description}</p>
+  </div>
+  <Modal title={item.title} image={item.image}
+    descr={item.description} />
+</article>`;
 
 const strategies = [
   {
-    title: 'CONTENT SORCERY',
+    title: 'Content Sorcery',
     description:
-      'We summon words from the void, arrange them into compelling stories, and watch your audience lean forward. Our content wizards refuse to write anything that could put a caffeinated raccoon to sleep.',
+      'We summon words from the void and arrange them into stories your audience actually finishes reading. No filler, no fluff — just content that converts.',
     image: 'images/marketing1.png',
   },
   {
-    title: 'INBOUND ALCHEMY',
+    title: 'Inbound Alchemy',
     description:
-      'Turning strangers into leads, leads into fans, and fans into evangelists who will passionately explain your value prop at dinner parties. Nobody asked them to. They just can\'t help it.',
+      'Turning strangers into leads, leads into fans, and fans into evangelists. Nobody asked them to evangelize at dinner parties. They just can\'t help it.',
     image: 'https://www.hubspot.com/hubfs/International%20Web/Brand-refresh-2022/EN/Flywheel-Graphic-EN.svg',
   },
   {
-    title: 'SOCIAL WIZARDRY',
+    title: 'Social Wizardry',
     description:
-      'We post, we engage, we make your brand feel like that cool friend everyone wants to tag. Algorithms fear us. Engagement rates love us. Your competitors will definitely screenshot our work.',
+      'We post, engage, and make your brand feel like the cool friend everyone tags. Algorithms fear us. Engagement rates love us.',
     image: 'images/hexmarketing.png',
   },
   {
-    title: 'SEO VOODOO',
+    title: 'SEO Voodoo',
     description:
-      'We whisper sacred incantations to search engines until your site climbs to page one. Keyword stuffing? Never heard of it. We do the real dark arts — technical audits, schema markup, and actual content strategy.',
+      'Sacred incantations whispered to search engines until your site climbs to page one. Technical audits, schema markup, and actual content strategy — not keyword stuffing.',
     image: 'images/seoM.jpg',
   },
 ];
 
 function MarketingStrategies() {
   return (
-    <div className='mt-10'>
-      <DevEyesTooltip label='Home / Section Header' code={`<h2 className="text-3xl font-semibold text-primary">
-  Ready to stop being forgettable?
-</h2>
-<h1 className="text-7xl font-bold text-primary mt-6 sm:text-5xl">
-  The <b className="text-secondary">PIXEL</b> power is real.
-</h1>`}>
-        <div>
-          <h2 className='text-3xl font-semibold text-primary sm:mt-10'>
-            Ready to stop being forgettable?
-          </h2>
-          <h1 className='text-7xl font-bold text-primary mt-6 sm:text-5xl leading-tight'>
-            The <b className='text-secondary'>PIXEL</b> power is real.
-          </h1>
-          <p className='text-gray-500 text-lg mt-6 leading-relaxed max-w-2xl'>
-            We've got four flavors of marketing magic — pick your potion, or let us mix all of them into
-            something that actually moves the needle. No fluff. No vibes-only decks. Just results.
-          </p>
-        </div>
-      </DevEyesTooltip>
+    <section className='section' style={{ borderTop: '1px solid #f3f4f6' }}>
+      <div className='container-app'>
+        {/* Section header */}
+        <DevEyesTooltip label='Home / Section Header' code={`<div className="mb-12">
+  <p className="eyebrow mb-3">What we do</p>
+  <h2 className="heading-1">The pixel power is real.</h2>
+  <p className="body-lg mt-4 max-w-xl">
+    Four flavors of marketing magic...
+  </p>
+</div>`}>
+          <div className='mb-12 md:mb-8'>
+            <p className='eyebrow mb-3'>What we do</p>
+            <h2 className='heading-1 mb-4'>The pixel power is real.</h2>
+            <p className='body-lg max-w-xl'>
+              Four flavors of marketing magic — pick your potion, or let us mix all of them into
+              something that actually moves the needle.
+            </p>
+          </div>
+        </DevEyesTooltip>
 
-      <div className='grid grid-cols-2 gap-10 mt-12 sm:grid-cols-1'>
-        {strategies.map((item) => (
-          <DevEyesTooltip key={item.title} label='Strategy Card' code={SECTION_CODE}>
-            <div className='border border-primary p-6 flex flex-col space-y-6 rounded-xl hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 transform hover:-translate-y-1'>
-              <h2 className='text-center -mt-9 bg-white border border-primary text-sm font-semibold rounded-lg text-secondary py-2 mx-8'>
-                {item.title}
-              </h2>
-              <img src={item.image} alt={item.title} className='m-auto h-20 w-20 object-contain' />
-              <Modal title={item.title} image={item.image} descr={item.description} />
-            </div>
-          </DevEyesTooltip>
-        ))}
+        {/* Cards grid */}
+        <div className='grid grid-cols-2 md:grid-cols-1 gap-6'>
+          {strategies.map((item) => (
+            <DevEyesTooltip key={item.title} label='Strategy Card' code={CARD_CODE}>
+              <article className='card p-6 flex flex-col gap-5'>
+                <div
+                  className='h-12 w-12 rounded-lg flex items-center justify-center flex-shrink-0'
+                  style={{ background: 'rgba(78,174,186,0.1)' }}
+                >
+                  <img src={item.image} alt={item.title} className='h-7 w-7 object-contain' />
+                </div>
+                <div className='flex-1'>
+                  <h3 className='heading-3 mb-2'>{item.title}</h3>
+                  <p className='body'>{item.description}</p>
+                </div>
+                <Modal title={item.title} image={item.image} descr={item.description} />
+              </article>
+            </DevEyesTooltip>
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
 

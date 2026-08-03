@@ -1,54 +1,62 @@
 import React from 'react';
 import DevEyesTooltip from '../../components/DevEyesTooltip';
 
-const CODE = `// Contact/Address.tsx — Contact Info Card
-function Address() {
-  return (
-    <div className="bg-primary rounded-3xl flex flex-col
-      space-y-8 p-10 text-white shadow-lg">
-      <h2 className="text-3xl font-bold">Get In Touch</h2>
-      <p className="text-white/80 leading-relaxed">
-        PixelPusher Co. — We answer emails, return calls, and
-        occasionally reply to Slack on weekends. You're welcome.
-      </p>
-      {contactItems.map(({ icon, label, value }) => (
-        <div key={label} className="flex space-x-5 items-center">
-          <div className="h-12 w-12 p-2 bg-white/10 rounded-xl">
-            <i className={\`\${icon} text-3xl text-secondary\`} />
-          </div>
-          <div>
-            <p className="font-semibold text-lg">{label}</p>
-            <p className="text-white/80">{value}</p>
-          </div>
-        </div>
-      ))}
+const CODE = `// Contact/Address.tsx
+<div className="rounded-2xl p-8 flex flex-col gap-8"
+  style={{ background: '#0f2f33' }}>
+  <div>
+    <h2 className="heading-2 text-white mb-2">Contact Info</h2>
+    <p className="body" style={{ color: 'rgba(255,255,255,0.65)' }}>
+      PixelPusher Co. — We answer emails, return calls, and
+      occasionally reply to Slack on weekends.
+    </p>
+  </div>
+  {contactItems.map(({ icon, label, value }) => (
+    <div key={label} className="flex items-start gap-4">
+      <div className="h-10 w-10 rounded-lg bg-white/10
+        flex items-center justify-center flex-shrink-0">
+        <i className={\`\${icon} text-xl\`} style={{ color: '#4eaeba' }} />
+      </div>
+      <div>
+        <p className="text-white font-semibold text-sm">{label}</p>
+        <p className="body text-sm" style={{ color: 'rgba(255,255,255,0.65)' }}>
+          {value}
+        </p>
+      </div>
     </div>
-  );
-}`;
+  ))}
+</div>`;
 
 const contactItems = [
-  { icon: 'ri-map-pin-line',    label: 'Visit',  value: '404 Devland Blvd, Webville, CA' },
-  { icon: 'ri-mail-send-line',  label: 'Email',  value: 'hello@pixelpusher.co' },
-  { icon: 'ri-phone-line',      label: 'Call',   value: '(555) DEV-0101' },
+  { icon: 'ri-map-pin-line',   label: 'Visit',  value: '404 Devland Blvd, Webville, CA' },
+  { icon: 'ri-mail-send-line', label: 'Email',  value: 'hello@pixelpusher.co'           },
+  { icon: 'ri-phone-line',     label: 'Call',   value: '(555) DEV-0101'                 },
 ];
 
 function Address() {
   return (
     <DevEyesTooltip label='Contact / Address Card' code={CODE}>
-      <div className='bg-primary rounded-3xl flex flex-col space-y-8 p-10 text-white shadow-lg'>
-        <h2 className='text-3xl font-bold'>Get In Touch</h2>
-        <p className='text-white/80 leading-relaxed'>
-          PixelPusher Co. — We answer emails, return calls, and occasionally reply to Slack on
-          weekends. You're welcome.
-        </p>
+      <div
+        className='rounded-2xl p-8 flex flex-col gap-8'
+        style={{ background: '#0f2f33' }}
+      >
+        <div>
+          <h2 className='heading-2 text-white mb-2'>Contact Info</h2>
+          <p className='body' style={{ color: 'rgba(255,255,255,0.65)' }}>
+            PixelPusher Co. — We answer emails, return calls, and occasionally reply to Slack on weekends.
+          </p>
+        </div>
         {contactItems.map(({ icon, label, value }) => (
-          <div key={label} className='flex space-x-5 items-center'>
-            <div className='h-12 w-12 p-2 bg-white/10 rounded-xl flex items-center justify-center'>
-              <i className={`${icon} text-2xl text-secondary`} />
+          <div key={label} className='flex items-start gap-4'>
+            <div
+              className='h-10 w-10 rounded-lg flex items-center justify-center flex-shrink-0'
+              style={{ background: 'rgba(255,255,255,0.1)' }}
+            >
+              <i className={`${icon} text-xl`} style={{ color: '#4eaeba' }} />
             </div>
             <div>
-              <p className='font-semibold text-lg'>{label}</p>
-              <p className='text-white/80 text-sm'>{value}</p>
+              <p className='text-white font-semibold text-sm mb-0.5'>{label}</p>
+              <p className='body text-sm' style={{ color: 'rgba(255,255,255,0.65)' }}>{value}</p>
             </div>
           </div>
         ))}
